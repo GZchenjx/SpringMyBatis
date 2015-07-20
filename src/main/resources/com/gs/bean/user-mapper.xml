@@ -8,12 +8,40 @@
         <result property="password" column="password" />
     </resultMap>
 
-    <select id="findUserById" parameterType="int"
+    <select id="queryById" parameterType="int"
             resultType="user">
+        <![CDATA[
         select * from t_user where id=#{id}
+        ]]>
     </select>
 
-    <select id="findUsers" resultType="list" resultMap="userResultMap">
-        select * from t_user;
+    <select id="queryAll" resultType="list" resultMap="userResultMap">
+        <![CDATA[
+        select * from t_user
+        ]]>
     </select>
+
+    <select id="queryByPager" resultType="list" resultMap="userResultMap" parameterType="com.gs.common.bean.Pager">
+        <![CDATA[
+        select * from t_user limit #{beginIndex}, #{pageSize}
+        ]]>
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="user">
+        <![CDATA[
+        insert into t_user(name, password) values(#{name}, #{password})
+        ]]>
+    </insert>
+
+    <insert id="batchInsert" useGeneratedKeys="true" keyProperty="list" parameterType="list">
+        <![CDATA[
+        insert into t_user(name, password) VALUES
+        ]]>
+        <foreach collection="list" item="item" index="index" separator=",">
+            <![CDATA[
+            (#{item.name}, #{item.password})
+            ]]>
+        </foreach>
+
+    </insert>
 </mapper>

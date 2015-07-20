@@ -20,8 +20,8 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
     private UserService userService;
 
     @Test
-    public void findUserById(){
+    public void queryById(){
         User user = new User();
-        System.out.println(userService.findUserById(1));
+        System.out.println(userService.queryById(1));
     }
 }

@@ -1,6 +1,7 @@
 package com.gs.service;
 
 import com.gs.bean.User;
+import com.gs.common.bean.Pager;
 
 import java.util.List;
 
@@ -9,7 +10,10 @@ import java.util.List;
  */
 public interface UserService {
 
-    public List<User> findUsers();
-    public User findUserById(int id);
+    public List<User> queryAll();
+    public User queryById(int id);
+    public int insert(User user);
+    public int batchInsert(List<User> users);
+    public List<User> queryByPager(Pager pager);
 
 }

@@ -1,6 +1,7 @@
 package com.gs.service;
 
 import com.gs.bean.User;
+import com.gs.common.bean.Pager;
 import com.gs.dao.UserDAO;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +18,28 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     @Override
-    public List<User> findUsers() {
-        return userDAO.findUsers();
+    public List<User> queryAll() {
+        return userDAO.queryAll();
     }
 
     @Override
-    public User findUserById(int id) {
-        return userDAO.findUserById(id);
+    public User queryById(int id) {
+        return userDAO.queryById(id);
     }
+
+    @Override
+    public int insert(User user) {
+        return userDAO.insert(user);
+    }
+
+    @Override
+    public int batchInsert(List<User> users) {
+        return userDAO.batchInsert(users);
+    }
+
+    @Override
+    public List<User> queryByPager(Pager pager) {
+        return userDAO.queryByPager(pager);
+    }
+
 }
