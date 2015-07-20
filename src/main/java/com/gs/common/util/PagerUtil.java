@@ -26,4 +26,10 @@ public class PagerUtil {
         return pager;
     }
 
+    public static void rebuildPager(Pager pager, int totalRecords) {
+        pager.setTotalRecords(totalRecords);
+        int result = totalRecords % pager.getPageSize();
+        pager.setTotalPages(result == 0 ? totalRecords / pager.getPageSize() : totalRecords / pager.getPageSize() + 1);
+    }
+
 }

@@ -15,7 +15,7 @@
         ]]>
     </select>
 
-    <select id="queryAll" resultType="list" resultMap="userResultMap">
+    <select id="query" resultType="list" resultMap="userResultMap">
         <![CDATA[
         select * from t_user
         ]]>
@@ -24,6 +24,12 @@
     <select id="queryByPager" resultType="list" resultMap="userResultMap" parameterType="com.gs.common.bean.Pager">
         <![CDATA[
         select * from t_user limit #{beginIndex}, #{pageSize}
+        ]]>
+    </select>
+
+    <select id="count" resultType="int">
+        <![CDATA[
+        select count(1) from t_user;
         ]]>
     </select>
 

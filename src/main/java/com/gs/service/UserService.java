@@ -10,10 +10,11 @@ import java.util.List;
  */
 public interface UserService {
 
-    public List<User> queryAll();
+    public List<User> query();
     public User queryById(int id);
     public int insert(User user);
     public int batchInsert(List<User> users);
     public List<User> queryByPager(Pager pager);
+    public int count();
 
 }

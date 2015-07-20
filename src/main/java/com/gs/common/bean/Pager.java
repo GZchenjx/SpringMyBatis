@@ -9,6 +9,9 @@ public class Pager {
     private int beginIndex;
     private int endIndex;
 
+    private int totalRecords;
+    private int totalPages;
+
     public int getPageSize() {
         return pageSize;
     }
@@ -31,5 +34,21 @@ public class Pager {
 
     public int getEndIndex() {
         return pageNo * pageSize;
+    }
+
+    public int getTotalRecords() {
+        return totalRecords;
+    }
+
+    public void setTotalRecords(int totalRecords) {
+        this.totalRecords = totalRecords;
+    }
+
+    public int getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
     }
 }

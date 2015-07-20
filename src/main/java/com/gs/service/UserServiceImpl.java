@@ -18,8 +18,8 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     @Override
-    public List<User> queryAll() {
-        return userDAO.queryAll();
+    public List<User> query() {
+        return userDAO.query();
     }
 
     @Override
@@ -42,4 +42,8 @@ public class UserServiceImpl implements UserService {
         return userDAO.queryByPager(pager);
     }
 
+    @Override
+    public int count() {
+        return userDAO.count();
+    }
 }

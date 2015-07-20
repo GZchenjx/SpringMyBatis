@@ -35,7 +35,7 @@ public class UserController {
 
     @RequestMapping("index")
     public String query(Model model) {
-        List<User> users = userService.queryAll();
+        List<User> users = userService.query();
         for (User user : users) {
             System.out.println(user);
         }
@@ -74,7 +74,10 @@ public class UserController {
 
     @RequestMapping("page/{pageNo}")
     public String queryByPager(@PathVariable("pageNo") int pageNo) {
+        int count = userService.count();
         Pager pager = PagerUtil.getPager(pageNo);
+        PagerUtil.rebuildPager(pager, count);
+        System.out.println("Total records: " + pager.getTotalRecords() + ", total pages: " + pager.getTotalPages());
         List<User> users = userService.queryByPager(pager);
         for(User user : users) {
             System.out.println(user);
