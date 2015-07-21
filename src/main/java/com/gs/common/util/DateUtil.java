@@ -1,14 +1,12 @@
 package com.gs.common.util;
 
-import org.apache.commons.lang3.time.DateUtils;
-
 import java.util.Calendar;
 import java.util.Date;
 
 /**
  * Created by WangGenshen on 7/20/15.
  */
-public class DateUtil extends DateUtils {
+public class DateUtil {
 
     public static final String PAST_SECONDS = "秒前";
     public static final String PAST_MINUTES = "分钟前";
