@@ -45,6 +45,8 @@
         <taglibs-version>1.1.2</taglibs-version>
         <jstl-version>1.2</jstl-version>
         <commons-lang-version>3.4</commons-lang-version>
+        <jackson-version>1.9.13</jackson-version>
+        <aspectj-version>1.8.8</aspectj-version>
     </properties>
 
     <dependencies>
@@ -136,6 +138,18 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-lgpl</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj-version}</version>
         </dependency>
 
     </dependencies>
