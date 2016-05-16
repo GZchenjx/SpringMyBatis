@@ -7,6 +7,6 @@
        <!--
        <context:component-scan base-package="com.gs.dao"/>
        -->
-       <context:component-scan base-package="com.gs.service"/>
+       <context:component-scan base-package="com.gs"/>
 
 </beans>
